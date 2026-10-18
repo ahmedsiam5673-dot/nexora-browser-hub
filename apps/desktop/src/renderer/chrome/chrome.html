@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NEXORA Browser</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="nexora://assets/chrome.css">
+  <script src="nexora://assets/chrome.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    <div id="tabstrip" role="tablist" aria-label="Tabs"></div>
+    <div id="toolbar" role="toolbar" aria-label="Navigation">
+      <button id="back" class="icon" aria-label="Back" title="Back (Alt+Left)"></button>
+      <button id="forward" class="icon" aria-label="Forward" title="Forward (Alt+Right)"></button>
+      <button id="reload" class="icon" aria-label="Reload" title="Reload (Ctrl+R)"></button>
+      <button id="home" class="icon" aria-label="Home" title="Home (Alt+Home)"></button>
+      <form id="omnibox" role="search" autocomplete="off">
+        <input id="address" type="text" spellcheck="false" autocapitalize="off" aria-label="Address and search bar" placeholder="Search or enter address">
+      </form>
+      <button id="star" class="icon" aria-label="Bookmark this page" aria-pressed="false" title="Bookmark this page (Ctrl+D)"></button>
+      <button id="profile" class="chip" aria-haspopup="menu" title="Profiles"></button>
+      <button id="menu" class="icon" aria-label="Menu" aria-haspopup="menu" title="Menu"></button>
+    </div>
+    <div id="infobar" role="region" aria-label="Bookmarks and notices"></div>
+  </div>
+</body>
+</html>

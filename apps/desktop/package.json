@@ -1,0 +1,61 @@
+{
+  "name": "@nexora/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/main.cjs",
+  "description": "NEXORA Browser Hub desktop browser (Electron / Chromium)",
+  "scripts": {
+    "build:js": "node build.mjs",
+    "dev": "node build.mjs && electron .",
+    "build": "node build.mjs && electron-builder",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "node build.mjs && xvfb-run -a tsx scripts/e2e.mts"
+  },
+  "dependencies": {
+    "@nexora/core": "*",
+    "electron-updater": "^6.8.9"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "electron": "44.9.0",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2",
+    "playwright-core": "^1.64.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.5"
+  },
+  "build": {
+    "appId": "com.nexora.browserhub",
+    "productName": "NEXORA Browser",
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Network;WebBrowser"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.productivity"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "extraMetadata": {
+      "main": "dist/main.cjs"
+    }
+  }
+}

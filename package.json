@@ -1,0 +1,15 @@
+{
+  "name": "nexora-browser-hub",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev:web": "npm run dev -w @nexora/web",
+    "build:web": "npm run build -w @nexora/web",
+    "dev:desktop": "npm run dev -w @nexora/desktop",
+    "build:desktop": "npm run build -w @nexora/desktop",
+    "test": "npm run test -ws --if-present",
+    "typecheck": "npm run typecheck -ws --if-present"
+  },
+  "engines": { "node": ">=22.12" }
+}
